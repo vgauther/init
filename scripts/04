@@ -1,0 +1,9 @@
+#!/bin/bash
+
+OUT=$(md5sum --tag /etc/crontab | cut -d ' ' -f 4 | tr -d '\n')
+
+DIF="8f111d100ea459f68d333d63a8ef2205"
+
+if [ ${OUT} != ${DIF} ] ; then
+	    echo "Fichier crontab modifie" | mail -s "Alerte" root
+fi

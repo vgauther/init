@@ -1,0 +1,1 @@
+netstat -nr | grep en0 | grep default |  cut -c20- | rev | cut -c41- | rev | cat -e
